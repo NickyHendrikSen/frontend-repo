@@ -38,7 +38,7 @@ const persistor = persistStore(store);
 export { store, persistor };
 
 const initializeApp = async () => {
-  // await store.dispatch(apiSlice.endpoints.loadProfile.initiate({}, {forceRefetch: true}))
+  await store.dispatch(apiSlice.endpoints.loadProfile.initiate({}, {forceRefetch: true}))
 }
 
 initializeApp();
