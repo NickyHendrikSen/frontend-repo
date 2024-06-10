@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { userLoggedIn } from "../auth/authSlice";
+import { userLoggedIn, userLoggedOut } from "../auth/authSlice";
 
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -23,6 +23,10 @@ export const apiSlice = createApi({
           );
         } catch (error: any) {
           console.log(error)
+          dispatch(
+            userLoggedOut()
+          );
+          
         }
       }
     }),
